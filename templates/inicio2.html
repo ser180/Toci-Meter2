@@ -96,12 +96,12 @@
             </div>
         </div>
 
-        <div class="row mt-4">
+          <div class="row mt-4">
             <div class="col-lg-6">
-                <button id="btn-foro" class="btn-custom content-section">
-                    <img src="{{ url_for('static', filename='img/foro.png') }}">
-                    <h2 class="section-title">Foro</h2>
-                    <p>Participa en nuestra comunidad y comparte tus experiencias y conocimientos con otros entusiastas de la jardinería.</p>
+                <button id="btn-huertos" class="btn-custom content-section">
+                    <img src="{{ url_for('static', filename='img/huertos.png') }}">
+                    <h2 class="section-title">Huertos</h2>
+                    <p>Aprende a crear y mantener tu propio huerto, ya sea en tu jardín, terraza o balcón.</p>
                 </button>
             </div>
             <div class="col-lg-6">
@@ -112,23 +112,7 @@
                 </button>
             </div>
         </div>
-
-        <div class="row mt-4">
-            <div class="col-lg-6">
-                <button id="btn-huertos" class="btn-custom content-section">
-                    <img src="{{ url_for('static', filename='img/huertos.png') }}">
-                    <h2 class="section-title">Huertos</h2>
-                    <p>Aprende a crear y mantener tu propio huerto, ya sea en tu jardín, terraza o balcón.</p>
-                </button>
-            </div>
-            <div class="col-lg-6">
-                <button id="btn-citas" class="btn-custom content-section bg-light-green">
-                    <img src="{{ url_for('static', filename='img/citas.png') }}">
-                    <h2 class="section-title">Citas</h2>
-                    <p>Encuentra inspiración en citas y refranes sobre la jardinería y la naturaleza.</p>
-                </button>
-            </div>
-        </div>
+        
     </div>
 
     <footer class="footer mt-5">
@@ -142,11 +126,11 @@
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("btn-plantas").addEventListener("click", function() {
-            window.location.href = "{{ url_for('plantas') }}";
+            window.location.href = "{{ url_for('plantas2') }}";
         });
 
         document.getElementById("btn-herramientas").addEventListener("click", function() {
-            window.location.href = "{{ url_for('herramientas') }}";
+            window.location.href = "{{ url_for('herramientas2') }}";
         });
 
         document.getElementById("btn-foro").addEventListener("click", function() {
@@ -154,11 +138,11 @@
         });
 
         document.getElementById("btn-articulos").addEventListener("click", function() {
-            window.location.href = "{{ url_for('articulos') }}";
+            window.location.href = "{{ url_for('articulos2') }}";
         });
 
         document.getElementById("btn-huertos").addEventListener("click", function() {
-            window.location.href = "{{ url_for('gestionar_huertos') }}";
+            window.location.href = "{{ url_for('huertos2') }}";
         });
 
     });
