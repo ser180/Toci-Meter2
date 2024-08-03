@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo_apartados.css">
+    <link rel="stylesheet" href="css/botones.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar-brand {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+        }
+        .content-section {
+            padding: 30px;
+        }
+        .content-grid {
+            margin-top: 40px;
+        }
+        .btn-custom {
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: none;
+            transition: transform 0.3s ease-in-out;
+        }
+        .btn-custom:hover {
+            transform: scale(1.05);
+            background-color: #d4edda;
+        }
+        .bg-light-green {
+            background-color: #d4edda;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success py-3 fixed-top">
+        <a class="navbar-brand" href="{{ url_for('inicio') }}">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+            
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('plantas') }}">Plantas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('herramientas') }}">Herramientas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('articulos') }}">Artículos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('Huertos') }}">Huertos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('citas') }}">Citas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('foro') }}">Foro</a>
+                </li>
+            
+            </ul>
+        </div>
+    </nav>
+
+    <section id="quienes-somos" class="content-section bg-light-green mt-5">
+        <div class="container">
+            <h2 class="section-title text-center">Quiénes Somos</h2>
+            <p class="text-center">Somos una comunidad dedicada a la jardinería y el cuidado de las plantas. Nuestro objetivo es proporcionar herramientas y recursos para ayudar a los jardineros de todos los niveles a mejorar sus habilidades y conocimientos.</p>
+        </div>
+    </section>
+
+    <div class="content-grid container">
+        <div class="row">
+            <div class="col-lg-6">
+                <button id="btn-plantas" class="btn-custom content-section">
+                    <img src="{{ url_for('static', filename='img/plantas.png') }}">
+                    <h2 class="section-title">Plantas</h2>
+                    <p>Aquí encontrarás información detallada sobre diferentes tipos de plantas, sus cuidados y características.</p>
+                </button>
+            </div>
+            <div class="col-lg-6">
+                <button id="btn-herramientas" class="btn-custom content-section bg-light-green">
+                    <img src="{{ url_for('static', filename='img/herramientas.png') }}">
+                    <h2 class="section-title">Herramientas</h2>
+                    <p>Descubre las mejores herramientas para la jardinería y cómo utilizarlas de manera efectiva.</p>
+                </button>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-lg-6">
+                <button id="btn-foro" class="btn-custom content-section">
+                    <img src="{{ url_for('static', filename='img/foro.png') }}">
+                    <h2 class="section-title">Foro</h2>
+                    <p>Participa en nuestra comunidad y comparte tus experiencias y conocimientos con otros entusiastas de la jardinería.</p>
+                </button>
+            </div>
+            <div class="col-lg-6">
+                <button id="btn-articulos" class="btn-custom content-section bg-light-green">
+                    <img src="{{ url_for('static', filename='img/articulos.png') }}">
+                    <h2 class="section-title">Artículos</h2>
+                    <p>Lee artículos sobre diversos temas relacionados con la jardinería y el cuidado de las plantas.</p>
+                </button>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-lg-6">
+                <button id="btn-huertos" class="btn-custom content-section">
+                    <img src="{{ url_for('static', filename='img/huertos.png') }}">
+                    <h2 class="section-title">Huertos</h2>
+                    <p>Aprende a crear y mantener tu propio huerto, ya sea en tu jardín, terraza o balcón.</p>
+                </button>
+            </div>
+            <div class="col-lg-6">
+                <button id="btn-citas" class="btn-custom content-section bg-light-green">
+                    <img src="{{ url_for('static', filename='img/citas.png') }}">
+                    <h2 class="section-title">Citas</h2>
+                    <p>Encuentra inspiración en citas y refranes sobre la jardinería y la naturaleza.</p>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-5">
+        <p>&copy; 2024 Comunidad de Jardinería. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("btn-plantas").addEventListener("click", function() {
+            window.location.href = "{{ url_for('plantas') }}";
+        });
+
+        document.getElementById("btn-herramientas").addEventListener("click", function() {
+            window.location.href = "{{ url_for('herramientas') }}";
+        });
+
+        document.getElementById("btn-foro").addEventListener("click", function() {
+            window.location.href = "{{ url_for('foro') }}";
+        });
+
+        document.getElementById("btn-articulos").addEventListener("click", function() {
+            window.location.href = "{{ url_for('articulos') }}";
+        });
+
+        document.getElementById("btn-huertos").addEventListener("click", function() {
+            window.location.href = "{{ url_for('huertos2') }}";
+        });
+
+        document.getElementById("btn-citas").addEventListener("click", function() {
+            window.location.href = "{{ url_for('citas') }}";
+        });
+    });
+    </script>
+</body>
+</html>

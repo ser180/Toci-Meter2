@@ -1,0 +1,26 @@
+body {
+    background-color: #f3f3f3;
+}
+
+.navbar {
+    font-size: 1.2rem;
+}
+
+.header-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+}
+
+.card {
+    margin: 20px 0;
+    margin: 10px;
+    height: 30rem;
+    border: 2px solid black;
+    width: 15rem;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Búsqueda</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Resultados para "{{ query }}"</h1>
+        <ul>
+            {% for resultado in resultados %}
+                <li>{{ resultado.nombre }}: {{ resultado.descripcion }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('inicio') }}">Volver al inicio</a>
+    </div>
+</body>
+</html>

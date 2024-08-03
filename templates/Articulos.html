@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artículos</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo_apartados.css">
+    <style>
+        /* Estilo adicional para la barra fija */
+        .catalog-item .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black; /* Línea negra alrededor */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.catalog-item .card-img-top {
+    height: 350px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Ajusta la imagen al contenedor */
+    border-bottom: 1px solid black; /* Línea negra entre imagen y contenido */
+}
+
+.catalog-item .card-body {
+    flex-grow: 1; /* Permite que el cuerpo de la tarjeta crezca para ocupar el espacio */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espacio entre los elementos internos */
+}
+
+.catalog-item .card-title, .catalog-item .card-text {
+    margin-bottom: 10px;
+}
+
+.catalog-container {
+    margin-top: 120px; /* Ajusta este valor según la altura de la barra de navegación */
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success py-3 fixed-top">
+    <a class="navbar-brand" href="{{ url_for('inicio') }}">Inicio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('plantas') }}">Plantas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('herramientas') }}">Herramientas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('articulos') }}">Artículos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('huertos') }}">Huertos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('citas') }}">Citas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('foro') }}">Foro</a>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <div class="container search-container">
+        <form class="form-inline justify-content-center">
+            <input class="form-control mr-sm-1 search-bar" type="search" placeholder="Buscar artículos" aria-label="Buscar">
+            <button class="btn btn-outline-success my- my-sm-0" type="submit">Buscar</button>
+        </form>
+    </div>
+
+    <div class="container catalog-container">
+        <div class="row">
+            <!-- Catalog item -->
+            <div class="col-md-4 catalog-item">
+                <div class="card">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_633774-MLM45443464598_042021-O.webp" class="card-img-top" alt="Producto 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Base de madera</h5>
+                        <p class="card-text">Descripción del producto 1.</p>
+                        <p class="card-text"><strong>Precio: $180.00</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Catalog item -->
+            <div class="col-md-4 catalog-item">
+                <div class="card">
+                    <img src="https://m.media-amazon.com/images/I/8150F3EAHAL._AC_UF350,350_QL50_.jpg" class="card-img-top" alt="Producto 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Soporte para macetas</h5>
+                        <p class="card-text">Descripción del producto 2.</p>
+                        <p class="card-text"><strong>Precio: $250.00</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Catalog item -->
+            <div class="col-md-4 catalog-item">
+                <div class="card">
+                    <img src="https://i5.walmartimages.com.mx/mg/gm/3pp/asr/8e239ac8-2001-4490-89a1-2ac1eb1c57a8.c4adaf1f2a1407fb5486c95ef8951988.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" class="card-img-top" alt="Producto 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Soporte para plantas</h5>
+                        <p class="card-text">Estos postes son perfectos para plantas trepadoras de interior. Hechos de plástico y ayudan a que tus plantas crezcan hacia arriba.</p>
+                        <p class="card-text"><strong>Precio: $300.00</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 catalog-item">
+                <div class="card">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_600693-MLM54537411585_032023-O.webp" class="card-img-top" alt="Producto 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Clips de fijación</h5>
+                        <p class="card-text">50 clips de fijación de pared de escalada para plantas en forma de hoja y pegatinas blancas grandes de fijación.</p>
+                        <p class="card-text"><strong>Precio: $250.00</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Catalog item -->
+            <div class="col-md-4 catalog-item">
+                <div class="card">
+                    <img src="https://m.media-amazon.com/images/I/51rPjiJvd0L.jpg" class="card-img-top" alt="Producto 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Bombilla de riego</h5>
+                        <p class="card-text">Un dispositivo automático de riego de plantas para sus días ocupados y diás de día festivo. Libera agua lentamente para mantener las plantas hidratadas.</p>
+                        <p class="card-text"><strong>Precio: $300.00</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 catalog-item">
+                <div class="card">
+                    <img src="https://m.media-amazon.com/images/I/81B6UeL59YL._AC_SX569_.jpg" class="card-img-top" alt="Producto 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Estatuas brillantes</h5>
+                        <p class="card-text">"20 piezas de estatuas brillantes en la obscuridad, accesorio de jardín, decoración de plantas y árboles.".</p>
+                        <p class="card-text"><strong>Precio: $250.00</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="container catalog-container">
+                <div class="row">
+                    <!-- Catalog item -->
+                    <div class="col-md-4 catalog-item">
+                        <div class="card">
+                            <img src="https://m.media-amazon.com/images/I/71+0YCybYdL._AC_SY300_SX300_.jpg" class="card-img-top" alt="Producto 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Carrito para plantas con ruedas</h5>
+                                <p class="card-text">Organizador de plantas con ruedas, se puede expandir de acuerdo con el tamaño del artículo colocado.</p>
+                                <p class="card-text"><strong>Precio: $410.00</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 catalog-item">
+                        <div class="card">
+                            <img src="https://m.media-amazon.com/images/I/61uC+nbDTNL._AC_SY300_SX300_.jpg" class="card-img-top" alt="Producto 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Ganchos de pared</h5>
+                                <p class="card-text">4 Ganchos para plantas, es adecuado para macetas, decoraciones, luces, y puede ser una buena decoración para tu hogar o jardín.</p>
+                                <p class="card-text"><strong>Precio: $360.00</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 catalog-item">
+                        <div class="card">
+                            <img src="https://i.etsystatic.com/5537004/r/il/5cbf57/4650357102/il_794xN.4650357102_rng5.jpg" class="card-img-top" alt="Producto 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Carteles para Plantas</h5>
+                                <p class="card-text">Estacas de plantas de madera, marcadores de plantas de madera atrevidos, palos de plantas de interior, estacas para plantas de interior.</p>
+                                <p class="card-text"><strong>Precio: $270.00</strong></p>
+                            </div>
+                        </div>
+                    </div>
+    <div class="container catalog-container">
+        <div class="row">
+            <!-- Catalog item -->
+            <div class="col-md-4 catalog-item">
+                <div class="card">
+                    <img src="https://img.ltwebstatic.com/images3_spmp/2023/12/04/53/1701680749a043c09431531b7a40656238f2345b55_thumbnail_720x.jpg" class="card-img-top" alt="Producto 1">
+                    <div class="card-body">
+                        <h5 class="card-title">6 Piezas Lindos Imanes De Plantas</h5>
+                        <p class="card-text">Lindos imanes de figuras para pegarle a la planta de tu preferencia sin daño.</p>
+                        <p class="card-text"><strong>Precio: $120.00</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 catalog-item">
+                <div class="card">
+                    <img src="https://i.etsystatic.com/8232966/r/il/3db8ef/4556568909/il_794xN.4556568909_cc5z.jpg" class="card-img-top" alt="Producto 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Señales de Plantas de Madera</h5>
+                        <p class="card-text">Ayudan a señalar que una planta está pasando por una situación delicada o que requiere de cuidados..</p>
+                        <p class="card-text"><strong>Precio: $150.00</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 catalog-item">
+                <div class="card">
+                    <img src="https://i.etsystatic.com/39701489/r/il/d7c329/4976578372/il_794xN.4976578372_cu6f.jpg" class="card-img-top" alt="Producto 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Accesorio para plantas</h5>
+                        <p class="card-text">Accesorio para las ramas de los árboles o plantas en forma de perezozo, material lijero..</p>
+                        <p class="card-text"><strong>Precio: $400.00</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more catalog items here -->
+        </div>
+    </div>
+
+    <footer class="footer mt-5">
+        <p>&copy; 2024 Comunidad de Jardinería. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+                    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("btn-plantas").addEventListener("click", function() {
+            window.location.href = "{{ url_for('plantas') }}";
+        });
+
+        document.getElementById("btn-herramientas").addEventListener("click", function() {
+            window.location.href = "{{ url_for('herramientas') }}";
+        });
+
+        document.getElementById("btn-foro").addEventListener("click", function() {
+            window.location.href = "{{ url_for('foro') }}";
+        });
+
+        document.getElementById("btn-articulos").addEventListener("click", function() {
+            window.location.href = "{{ url_for('articulos') }}";
+        });
+
+        document.getElementById("btn-huertos").addEventListener("click", function() {
+            window.location.href = "{{ url_for('huertos') }}";
+        });
+
+        document.getElementById("btn-citas").addEventListener("click", function() {
+            window.location.href = "{{ url_for('citas') }}";
+        });
+    });
+</script>
+</body>
+</html>

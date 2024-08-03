@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilo adicional para la barra fija */
+        .navbar.fixed-top {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        /* Estilo para los botones marcados */
+        .btn.active {
+            background-color: #28a745;
+            color: white;
+        }
+        /* Estilo para los botones de redirección */
+        .btn-redirect {
+            display: none;
+        }
+        .navbar-brand {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success py-3 fixed-top">
+        <a class="navbar-brand" href="{{ url_for('inicio') }}">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+           
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('plantas') }}">Plantas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('herramientas') }}">Herramientas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('foro') }}">Foro</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('articulos') }}">Artículos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('huertos') }}">Huertos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('citas') }}">Citas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- Checklist Section -->
+    <div class="container mt-5 pt-5">
+        <h2>Generar Cita con Experto</h2>
+        <form id="checklistForm" action="/crear_cita" method="post">
+            <div class="form-group">
+                <label for="fechaConsulta">Fecha de la consulta</label>
+                <input type="date" class="form-control" id="fechaConsulta" name="fecha_consulta" required>
+            </div>
+
+            <div class="form-group">
+                <label for="horaConsulta">Hora de la consulta</label>
+                <input type="time" class="form-control" id="horaConsulta" name="hora_consulta" required>
+            </div>
+
+            <div class="form-group">
+                <label for="duracionConsulta">Duración de la consulta (en minutos)</label>
+                <input type="number" class="form-control" id="duracionConsulta" name="duracion" required>
+            </div>
+
+            <button type="submit" class="btn btn-success">Generar Cita</button>
+        </form>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
