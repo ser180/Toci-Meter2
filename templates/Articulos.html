@@ -38,6 +38,10 @@
 .catalog-container {
     margin-top: 120px; /* Ajusta este valor según la altura de la barra de navegación */
 }
+ .navbar-brand {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+        }
 
     </style>
 </head>
@@ -55,9 +59,6 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('herramientas') }}">Herramientas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('articulos') }}">Artículos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('huertos') }}">Huertos</a>
